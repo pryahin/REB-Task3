@@ -29,13 +29,6 @@ public class ShareController {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @RequestMapping(value = "/clear", method = RequestMethod.GET)
-    public ResponseEntity clear() {
-        shareDAO.clearTable();
-
-        return ResponseEntity.status(HttpStatus.OK).body("OK");
-    }
-
     private String genResultTable(List<ShareModel> shares) {
         String result = "<table><tr><th>Company</th><th>Owner</th></tr>";
         for (ShareModel share : shares) {
